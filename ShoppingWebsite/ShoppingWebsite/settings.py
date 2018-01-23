@@ -78,6 +78,7 @@ WSGI_APPLICATION = 'ShoppingWebsite.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
+
 if DEBUG:   # Running on the development environment
     DATABASES = {
         'default': {
