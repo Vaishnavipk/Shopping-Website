@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load staticfiles %}
+
+<head>
+    <!-- Theme Made By www.w3schools.com - No Copyright -->
+    <title>購物車</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    
+    <link rel="stylesheet" href="{% static 'main/css/main.css' %}">
+</head>
+
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
+    {% include 'main/menu.html' %}
+    <div class="container text-center">
+        <h3>朝陽購物車</h3>
+        <div class="row">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>商品名稱</th>
+                        <th>數量</th>
+                    </tr>
+                </thead>
+                <tbody>
+                   {% for s in BuyList %}
+					<tr>
+    					<td>{{ s.item }}</td>
+    					<td>{{ s.count }}</td>
+					</tr>
+					{% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <p>你總共買了{{ total }}隻</p>
+    </div>
+    <!-- Footer -->
+    {% include 'main/footer.html' %}
+</body>
+
+</html>
